@@ -1,6 +1,5 @@
 "use strict";
 
-import "core-js/stable";
 import "./../style/visual.less";
 import powerbi from "powerbi-visuals-api";
 import VisualConstructorOptions = powerbi.extensibility.visual.VisualConstructorOptions;
@@ -100,15 +99,16 @@ export class Visual implements IVisual {
                     }
                 } else if (j<3) {
                     if (i===0) {
-                        let nameValue = Object.keys(categorialData.values[j].source.roles)[0]; // nazwa danych
+                        let nameValue = Object.keys(categorialData.values[j].source.roles)[1]; // nazwa danych
                         rangeAxisDate[nameValue] = dataValue[j].values[i];       // zapis danych do słownika 
                     }
                 } else {
-                    let nameValue = Object.keys(categorialData.values[j].source.roles)[0]; // nazwa danych
+                    let nameValue = Object.keys(categorialData.values[j].source.roles)[1]; // nazwa danych'
                     kamienie[nameValue] = dataValue[j].values[i];      // zapis danych do słownika
                 };
             };
             exData.push(kamienie)
+            
         };
 
 
@@ -129,6 +129,7 @@ export class Visual implements IVisual {
        
         // sortowanie po category(index)
         exData.sort((a,b)=> a.km_plan-b.km_plan);
+        
         
         //////////////// FUNKCJE USTAWIANIE SKALI OSI DLA X i Y  /////////////////////////
         const y1 = this.axisY, x1=this.axisX, x2=this.axisXb, x3=this.axisXc , x4=this.axisXd, x5=this.symbol
