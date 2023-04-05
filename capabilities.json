@@ -1,0 +1,157 @@
+{
+    "dataRoles": [
+        {
+            "displayName": "Skrot nazwy Kamienia",
+            "name": "category",
+            "kind": "Grouping"
+        }
+        ,
+        {
+            "displayName": "Okres",
+            "name": "okres",
+            "kind": "Measure"
+        }
+        ,
+        {
+            "displayName": "Rozpoczecie",
+            "name": "start",
+            "kind": "Measure"
+        }
+        ,
+        {
+            "displayName": "Zakonczenie",
+            "name": "koniec",
+            "kind": "Measure"
+        }
+        ,
+        {
+            "displayName": "Data Bazowa Kamienia",
+            "name": "km_baza",
+            "kind": "Measure"
+        }
+        ,
+        {
+            "displayName": "Data Aktualna Kamienia",
+            "name": "km_plan",
+            "kind": "Measure"
+        }        ,
+        {
+            "displayName": "Zaawasowanie Kamienia",
+            "name": "procent",
+            "kind": "Measure"
+        }
+        ,
+        {
+            "displayName": "Faza",
+            "name": "faza",
+            "kind": "Measure"
+        }
+      
+    ],
+    "objects": {
+        "dataPoint": {
+            "displayName": "Data colors",
+            "properties": {
+                "defaultColor": {
+                    "displayName": "Default color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "showAllDataPoints": {
+                    "displayName": "Show all",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "fill": {
+                    "displayName": "Fill",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "fillRule": {
+                    "displayName": "Color saturation",
+                    "type": {
+                        "fill": {}
+                    }
+                },
+                 "fontSize": {
+                    "displayName": "Text Size",
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "dataViewMappings": [
+        { 
+            "conditions": [
+                {
+                    "start": {
+                        "max": 2
+                    }
+                }
+            ],
+            "categorical": {
+                "categories": {
+                    "for": {
+                        "in": "category"
+                    },
+                    "dataReductionAlgorithm": {
+                        "top": {}
+                    }
+                },
+                "values": {
+                    "select": [
+                        {
+                            "for": {
+                                "in": "okres"
+                            }
+                        } , {
+                            "for": {
+                                "in": "start"
+                            }
+                        } , {
+                            "for": {
+                                "in": "koniec"
+                            }
+                        } ,  {
+                            "for": {
+                                "in": "km_baza"
+                            }
+                        } ,  {
+                            "for": {
+                                "in": "km_plan"
+                            }
+                        }, {
+                            "for": {
+                                "in": "procent"
+                            }
+                        } ,  {
+                            "for": {
+                                "in": "faza"
+                            }
+                        } 
+                        
+                    ]
+                }
+            }
+        }
+    ]
+}
+
+
+
+
